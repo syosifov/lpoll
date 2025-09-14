@@ -52,6 +52,7 @@ func PollHandler(c *gin.Context) {
 		log.Printf("Client subscribed: %s", clientId)
 	} else {
 		client.LastSeen = time.Now()
+		log.Printf("Client reconnected: %s", clientId)
 	}
 	mu.Unlock()
 
